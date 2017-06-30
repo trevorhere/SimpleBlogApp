@@ -1,15 +1,22 @@
 <html>
     <head>
-        <title>Blog App</title>
+        <title>Trevor's Blog!</title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     </head>
     <body>
         <div class="ui fixed inverted menu">
             <div class="ui container">
-                <div class="header item"><i class="terminal icon"></i> Blog Site</div>
+                <div class="header item"><i class="terminal icon"></i> </div>
                 <a href="/" class="item">Home</a>
+                 <% if(!currentUser){%>
+                 <a href="/login" class="item">Login</a>
+                 <% }else{ %>
+                 
                 <a href="/blogs/new" class="item">New Post</a>
+                <a href="/logout" class="item">Logout</a>
+                <p  class="item" >Signed in as <%= currentUser.username %></p>
+                <% } %>
             </div>
 
         </div>
